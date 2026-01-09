@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -19,7 +21,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role', // role: customer | admin | superadmin
     ];
 
     /**
@@ -33,7 +34,9 @@ class User extends Authenticatable
     ];
 
     /**
-     * Attribute casting.
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
      */
     protected function casts(): array
     {
@@ -41,36 +44,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    /* =========================
-       ROLE HELPER METHODS
-       ========================= */
-
-    public function isCustomer(): bool
-    {
-        return $this->role === 'customer';
-    }
-
-    public function isAdmin(): bool
-    {
-        return $this->role === 'admin';
-    }
-
-    public function isSuperAdmin(): bool
-    {
-        return $this->role === 'superadmin';
-    }
-
-    /* =========================
-       RELATIONSHIPS
-       ========================= */
-
-    /**
-     * Relasi ke orders (customer)
-     */
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
     }
 }
