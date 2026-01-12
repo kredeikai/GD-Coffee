@@ -6,14 +6,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 
+// Public (Tanpa login)
 use App\Http\Controllers\Public\PublicMenuController;
 
+// Superadmin
 use App\Http\Controllers\Superadmin\DashboardController as SuperadminDashboard;
 
+// Admin
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 
+// Customer (Sudah Login)
 use App\Http\Controllers\Customer\MenuController;
 use App\Http\Controllers\Customer\OrderController;
 
@@ -161,10 +165,16 @@ Route::middleware(['auth', 'role:customer'])
         // MENU customer
         Route::get('/menu', [MenuController::class, 'index'])
             ->name('customer.menu');
+        
+        Route::get('/menu/{menu}', [MenuController::class, 'show'])
+            ->name('customer.menu.show');
 
         // ORDERS customer
         Route::get('order', [OrderController::class, 'index'])
             ->name('customer.order');
+
+        Route::post('order', [OrderController::class, 'store'])
+            ->name('customer.order.store');
 
         // ABOUT
         Route::get('/about', fn() => view('customer.about'));
