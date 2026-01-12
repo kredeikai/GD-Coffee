@@ -34,7 +34,7 @@
             <label class="block text-sm font-medium">Gambar Saat Ini</label>
 
             @if($menu->image_path)
-                <img src="{{ asset('images/' . $menu->image_path) }}"
+                <img src="{{ asset('storage/' . $menu->image_path) }}"
                      class="w-40 h-32 object-cover rounded mb-2">
             @endif
 

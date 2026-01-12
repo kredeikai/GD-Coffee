@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class AdminMenuController extends Controller
@@ -21,29 +22,25 @@ class AdminMenuController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $validated = $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'nullable|string',
-            'price'       => 'required|integer|min:0',
-            'image'       => 'nullable|image|max:2048',
-            'is_active'   => 'nullable|boolean',
+            'price'       => 'required|numeric|min:0',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'is_active'   => 'boolean',
         ]);
 
+        // UPLOAD IMAGE
         if ($request->hasFile('image')) {
-            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images/menus'), $filename);
-
-            $data['image_path'] = 'menus/' . $filename;
+            $validated['image_path'] = $request->file('image')
+                ->store('menus', 'public'); // ⬅️ PENTING
         }
 
-        $data['is_active'] = $request->boolean('is_active', false);
+        Menu::create($validated);
 
-        Menu::create($data);
-
-        return redirect()
-            ->route('menus.index')
-            ->with('success', 'Menu berhasil ditambahkan.');
+        return redirect()->route('menus.index')->with('success', 'Menu berhasil ditambahkan');
     }
+
 
     public function edit(Menu $menu)
     {
@@ -52,59 +49,40 @@ class AdminMenuController extends Controller
 
     public function update(Request $request, Menu $menu)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name'        => 'required|string|max:255',
             'description' => 'nullable|string',
-            'price'       => 'required|numeric',
-            'image'       => 'nullable|image|max:2048',
-            'is_active'   => 'nullable|boolean',
+            'price'       => 'required|numeric|min:0',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'is_active'   => 'boolean',
         ]);
-
-        $imagePath = $menu->image_path;
 
         if ($request->hasFile('image')) {
-
+            // hapus lama
             if ($menu->image_path) {
-                $oldFile = public_path('images/' . $menu->image_path);
-                if (file_exists($oldFile)) {
-                    unlink($oldFile);
-                }
+                Storage::disk('public')->delete($menu->image_path);
             }
 
-            // Upload baru
-            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images/menus'), $filename);
-
-            $imagePath = 'menus/' . $filename;
+            $validated['image_path'] = $request->file('image')
+                ->store('menus', 'public');
         }
 
-        // Update data menu
-        $menu->update([
-            'name'        => $request->name,
-            'description' => $request->description,
-            'price'       => $request->price,
-            'image_path'  => $imagePath,
-            'is_active'   => $request->boolean('is_active', false),
-        ]);
+        $menu->update($validated);
 
-        return redirect()
-            ->route('menus.index')
-            ->with('success', 'Menu berhasil diperbarui.');
+        return redirect()->route('menus.index')->with('success', 'Menu diperbarui');
     }
 
     public function destroy(Menu $menu)
     {
+        // hapus gambar dari storage
         if ($menu->image_path) {
-            $file = public_path('images/' . $menu->image_path);
-            if (file_exists($file)) {
-                unlink($file);
-            }
+            Storage::disk('public')->delete($menu->image_path);
         }
 
         $menu->delete();
 
         return redirect()
             ->route('menus.index')
-            ->with('success', 'Menu berhasil dihapus.');
+            ->with('success', 'Menu berhasil dihapus');
     }
 }

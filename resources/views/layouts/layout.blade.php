@@ -23,6 +23,7 @@
             <li><a href="/menu" class="hover:text-yellow-300 transition">Menu</a></li>
             <li><a href="/about" class="hover:text-yellow-300 transition">Tentang Kami</a></li>
             <li><a href="/program" class="hover:text-yellow-300 transition">Program</a></li>
+            <li><a href="/login" class="hover:text-yellow-300 transition">Login</a></li>
         </ul>
     </nav>
 

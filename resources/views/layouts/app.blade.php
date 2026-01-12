@@ -24,6 +24,7 @@
             <li><a href="/customer/order" class="hover:text-yellow-300 transition">My Order</a></li>
             <li><a href="/customer/about" class="hover:text-yellow-300 transition">About Us</a></li>
             <li><a href="/customer/contact" class="hover:text-yellow-300 transition">Contact</a></li>
+            <li><a href="/login" class="hover:text-yellow-300 transition">Logout</a></li>
         </ul>
     </nav>
 

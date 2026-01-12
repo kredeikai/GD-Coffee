@@ -14,14 +14,16 @@
             <div class="bg-white rounded-lg shadow p-4">
 
                 @if($menu->image_path)
-                    <img src="{{ asset('images/' . $menu->image_path) }}"
-                         alt="{{ $menu->name }}"
-                         class="w-full h-40 object-cover rounded mb-3">
+                    <img
+                        src="{{ asset('storage/' . $menu->image_path) }}"
+                        alt="{{ $menu->name }}"
+                        class="w-full h-40 object-cover rounded mb-3">
                 @else
                     <div class="w-full h-40 bg-gray-200 rounded mb-3 flex items-center justify-center">
-                        <span class="text-gray-500">Tidak ada gambar</span>
+                    <span class="text-gray-500">Tidak ada gambar</span>
                     </div>
                 @endif
+
 
                 <h3 class="text-lg font-semibold text-amber-800">{{ $menu->name }}</h3>
 

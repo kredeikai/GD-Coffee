@@ -9,7 +9,7 @@
     <p><strong>Price:</strong> Rp {{ number_format($menu->price) }}</p>
 
     @if ($menu->image_path)
-        <img src="{{ asset('images/' . $menu->image_path) }}" width="200" alt="{{ $menu->name }}">
+        <img src="{{ asset('storage/' . $menu->image_path) }}" width="200" alt="{{ $menu->name }}">
     @endif
 </div>
 @endsection
