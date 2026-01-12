@@ -29,4 +29,14 @@ class MenuController extends Controller
 
         return view('customer.menu.show', compact('menu'));
     }
+
+    /**
+     * Detail menu
+     */
+    public function show(Menu $menu)
+    {
+        abort_if(!$menu->is_active, 404);
+
+        return view('customer.menu.show', compact('menu'));
+    }
 }
