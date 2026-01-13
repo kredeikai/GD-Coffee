@@ -79,7 +79,7 @@ Route::post('/register', [AuthController::class, 'register'])
     ->name('register.process');
 
 Route::post('/logout', [AuthController::class, 'logout'])
-    ->name('auth.logout');
+    ->name('auth/logout');
 
 
 /*
