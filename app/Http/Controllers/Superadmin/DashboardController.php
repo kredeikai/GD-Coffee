@@ -38,12 +38,12 @@ class DashboardController extends Controller
         // ======================
         // CHART DATA
         // ======================
-$revenuePerMonth = Order::selectRaw('strftime("%m", created_at) as month, SUM(total_price) as total')
-    ->whereYear('created_at', $year)
-    ->where('status', 'ready')
-    ->groupBy('month')
-    ->orderBy('month')
-    ->get();
+        $revenuePerMonth = Order::selectRaw('strftime("%m", created_at) as month, SUM(total_price) as total')
+            ->whereYear('created_at', $year)
+            ->where('status', 'ready')
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get();
 
         $orderPerMonth = Order::selectRaw('MONTH(created_at) as month, COUNT(*) as total')
             ->whereYear('created_at', $year)
@@ -55,12 +55,12 @@ $revenuePerMonth = Order::selectRaw('strftime("%m", created_at) as month, SUM(to
         // TOP MENU
         // ======================
         $topMenus = OrderItem::select(
-                'menu_id',
-                DB::raw('SUM(qty) as total_sold')
-            )
+            'menu_id',
+            DB::raw('SUM(qty) as total_sold')
+        )
             ->whereHas('order', function ($q) use ($year) {
                 $q->whereYear('created_at', $year)
-                  ->where('status', 'ready');
+                    ->where('status', 'ready');
             })
             ->groupBy('menu_id')
             ->orderByDesc('total_sold')
