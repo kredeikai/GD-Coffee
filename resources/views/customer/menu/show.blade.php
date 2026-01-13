@@ -8,7 +8,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Gambar -->
         <img
-            src="{{ asset('storage/' . $menu->image) }}"
+            src="{{ asset('storage/' . $menu->image_path) }}"
             class="w-full rounded-lg shadow"
             alt="{{ $menu->name }}"
         >

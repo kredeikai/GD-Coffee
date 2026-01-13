@@ -13,7 +13,7 @@
         @foreach($menus as $menu)
             <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
                 <img
-                    src="{{ asset('storage/' . $menu->image) }}"
+                    src="{{ asset('storage/' . $menu->image_path) }}"
                     class="w-full h-48 object-cover rounded-t-lg"
                     alt="{{ $menu->name }}"
                 >

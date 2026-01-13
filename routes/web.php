@@ -186,4 +186,8 @@ Route::middleware(['auth', 'role:customer'])
 
         Route::post('/contact', [ContactController::class, 'store'])
             ->name('customer.contact.store');
+
+        Route::post('/logout', [AuthController::class, 'logout'])
+            ->name('logout');
     });
+

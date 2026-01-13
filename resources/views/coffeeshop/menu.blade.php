@@ -14,7 +14,7 @@
             <div class="bg-white rounded-lg shadow p-4">
 
                 @if($menu->image_path)
-                    <img src="{{ asset('images/' . $menu->image_path) }}"
+                    <img src="{{ asset('storage/' . $menu->image_path) }}"
                          alt="{{ $menu->name }}"
                          class="w-full h-40 object-cover rounded mb-3">
                 @else

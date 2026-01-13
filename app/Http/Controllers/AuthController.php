@@ -132,6 +132,10 @@ class AuthController extends Controller
             return redirect()->route('admin.login');
         }
 
+        if ($user && ($user->isCustomer())) {
+            return redirect()->route('login');
+        }
+
         return redirect()->route('login');
     }
 }
