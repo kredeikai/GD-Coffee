@@ -1,59 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ☕ GD COFFE
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+**NAMA TEAM:** GD COFFE <br>
+**NAMA PROJECT:** GD COFFE WEBSITE <br>
+**JENIS BISNIS:** F&B
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👥 Anggota Tim
+| Nama Lengkap | NIM | Tugas |
+|---------------|-----|--------|
+| Muhammad Ibrah Adzdzikra | 2310120010 | Business & Konsep Utama |
+| Muhammad Abyan Alwafi Effendy | 2310120024 | Developer / CI-CD Workflows |
+| Muhammad Dzikri Khairrifo | 2310120025 | Developer / Frontend |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ⚙️ Arsitektur CI/CD Pipeline
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Project GD Coffee Website menerapkan Continuous Integration (CI) menggunakan
+GitHub Actions untuk memastikan kualitas dan stabilitas aplikasi.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Alur CI/CD secara umum:
+Developer → GitHub Repository → GitHub Actions → Build & Test → Deploy
 
-## Laravel Sponsors
+### 🧪 Continuous Integration (CI)
+Workflow CI dijalankan secara otomatis ketika:
+1. Terjadi push ke branch main
+2. Terdapat Pull Request menuju branch main
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### ⚙️ Tahapan Workflow CI
 
-### Premium Partners
+**1. Checkout Source Code**
+- Mengambil kode dari repository GitHub
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**2. Setup Environment**
+- PHP 8.2
+- Extension Laravel yang dibutuhkan
 
-## Contributing
+**3. Install Dependency**
+- Menggunakan Composer
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**4. Konfigurasi Environment**
+- Generate file .env
+- Generate application key
 
-## Code of Conduct
+**5. Database Testing**
+- Menggunakan SQLite untuk environment CI
+- Menjalankan migration otomatis
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**6. Testing**
+- Menjalankan php artisan test
+- Workflow akan gagal jika terdapat error
 
-## Security Vulnerabilities
+## ☕ GD Coffee
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+GD Coffee berdiri pada **awal tahun 2025** melalui kolaborasi antara **BAZNAS** dan **Pondok Pesantren Luhur Ciganjur**.  
+Inisiatif ini lahir dari semangat **pemberdayaan santri** dalam bidang **UMKM**, khususnya industri kopi,  
+agar mereka dapat mandiri secara ekonomi **tanpa meninggalkan nilai keilmuan dan spiritual pesantren**.
 
-## License
+Nama **“GD”** diambil dari inisial **Gus Dur**, sosok kharismatik dan pendiri pesantren,  
+sekaligus simbol **kearifan, keterbukaan, dan kemanusiaan universal**.  
+Nilai-nilai inilah yang menjadi dasar GD Coffee dalam menyajikan kopi terbaik dari tangan santri,  
+dengan semangat **berbagi dan membawa keberkahan**.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🌿 Visi & Misi
+
+### ☕ Visi
+> Menjadi pelopor kopi pesantren yang berdaya saing tinggi, berakar pada nilai-nilai kemanusiaan, keberkahan, dan kemandirian ekonomi santri.
+
+### 🌱 Misi
+- Menyajikan produk kopi berkualitas tinggi yang mencerminkan cita rasa nusantara dan nilai pesantren.  
+- Memberdayakan santri melalui pelatihan, produksi, dan distribusi kopi.  
+- Menjalin kolaborasi dengan lembaga sosial, pemerintah, dan masyarakat untuk memperluas dampak ekonomi umat.  
+- Menghadirkan pengalaman ngopi yang tidak sekadar rasa, tetapi juga **makna dan keberkahan**.  
+- Menjadi ruang belajar dan tumbuh bagi santri muda yang ingin terjun ke dunia wirausaha.
+
+---
+
+🏡 Nilai-Nilai Utama
+- **Kemandirian:** Santri mampu menggerakkan roda ekonomi secara mandiri.  
+- **Keberkahan:** Setiap proses produksi dilandasi niat baik dan keberkahan.  
+- **Kebersamaan:** Tumbuh bersama masyarakat untuk dampak sosial yang lebih luas.  
+- **Kualitas:** Menjaga mutu rasa kopi sebagai bentuk penghargaan pada tanah nusantara.  
+
+---
+
+## 📸 Dokumentasi
+> *“Kopi bukan sekadar minuman — ia adalah cerita tentang perjuangan, keberkahan, dan harapan.”*  
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/875b8950-d919-4431-bc17-3cf14c987a06" />
+
+---
+
+✨ **GD Coffee** — Dari Santri, Untuk Negeri.
