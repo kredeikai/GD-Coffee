@@ -36,7 +36,7 @@
                 Feedback
             </a>
 
-            <form method="POST" action="{{ route('logout') }}" class="mt-4">
+            <form method="POST" action="{{ route('auth.logout') }}" class="mt-4">
                 @csrf
                 <button
                     class="w-full text-left px-6 py-3 hover:bg-red-600">
