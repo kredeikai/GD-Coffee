@@ -33,7 +33,7 @@
     
             <!-- Americano -->
             <div class="bg-white shadow rounded-lg overflow-hidden hover:scale-105 transform transition duration-300">
-                <img src="{{ asset('images/americano.jpg') }}" alt="Americano" class="w-full h-48 object-cover">
+                <img src="{{ asset('images/Americano.jpg') }}" alt="Americano" class="w-full h-48 object-cover">
                 <div class="p-4 text-center">
                     <h3 class="text-xl font-semibold mb-2 text-amber-800">Americano</h3>
                     <p class="text-gray-600">Kopi hitam klasik dengan rasa ringan dan aroma khas.</p>
