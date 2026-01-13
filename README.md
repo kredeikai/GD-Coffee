@@ -103,9 +103,7 @@ Kami menerapkan sistem Automatic Deployment yang terintegrasi langsung dengan Gi
 ### Mekanisme Rollback
 Untuk menjaga ketersediaan layanan jika terjadi major bug pada versi terbaru, kami memiliki dua lapis mekanisme rollback:
 
-1. **Rollback via Railway :** Jika deployment terbaru gagal atau memiliki error fatal, tim dapat masuk ke Dashboard Railway, <br>
-    memilih tab Deployments, dan melakukan Rollback ke versi stabil sebelumnya (Success state) hanya dengan satu klik. <br>
-    Ini akan mengembalikan aplikasi ke kondisi kerja terakhir dalam hitungan detik. <br><br>
+1. **Rollback via Railway :** Jika deployment terbaru gagal atau memiliki error fatal, tim dapat masuk ke Dashboard Railway, memilih tab Deployments, dan melakukan Rollback ke versi stabil sebelumnya (Success state) hanya dengan satu klik. Ini akan mengembalikan aplikasi ke kondisi kerja terakhir dalam hitungan detik. <br><br>
     
     **Ini berada di Deploy ke #23** <br>
     <img width="430" height="356" alt="image" src="https://github.com/user-attachments/assets/76db9932-bcb0-4aa7-be76-1d27b8941bb1" /> <br>
@@ -117,14 +115,9 @@ Untuk menjaga ketersediaan layanan jika terjadi major bug pada versi terbaru, ka
 
 ## ☕ GD Coffee
 
-GD Coffee berdiri pada **awal tahun 2025** melalui kolaborasi antara **BAZNAS** dan **Pondok Pesantren Luhur Ciganjur**.  
-Inisiatif ini lahir dari semangat **pemberdayaan santri** dalam bidang **UMKM**, khususnya industri kopi,  
-agar mereka dapat mandiri secara ekonomi **tanpa meninggalkan nilai keilmuan dan spiritual pesantren**.
+GD Coffee berdiri pada **awal tahun 2025** melalui kolaborasi antara **BAZNAS** dan **Pondok Pesantren Luhur Ciganjur**. Inisiatif ini lahir dari semangat **pemberdayaan santri** dalam bidang **UMKM**, khususnya industri kopi, agar mereka dapat mandiri secara ekonomi **tanpa meninggalkan nilai keilmuan dan spiritual pesantren**.
 
-Nama **“GD”** diambil dari inisial **Gus Dur**, sosok kharismatik dan pendiri pesantren,  
-sekaligus simbol **kearifan, keterbukaan, dan kemanusiaan universal**.  
-Nilai-nilai inilah yang menjadi dasar GD Coffee dalam menyajikan kopi terbaik dari tangan santri,  
-dengan semangat **berbagi dan membawa keberkahan**.
+Nama **“GD”** diambil dari inisial **Gus Dur**, sosok kharismatik dan pendiri pesantren, sekaligus simbol **kearifan, keterbukaan, dan kemanusiaan universal**. Nilai-nilai inilah yang menjadi dasar GD Coffee dalam menyajikan kopi terbaik dari tangan santri, dengan semangat **berbagi dan membawa keberkahan**.
 
 ---
 
