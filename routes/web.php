@@ -188,6 +188,6 @@ Route::middleware(['auth', 'role:customer'])
             ->name('customer.contact.store');
 
         Route::post('/logout', [AuthController::class, 'logout'])
-            ->name('logout');
+            ->name('customer.logout');
     });
 
