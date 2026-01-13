@@ -104,7 +104,7 @@ Route::prefix('admin')
     ->middleware(['auth', 'role:admin'])
     ->group(function () {
 
-        Route::get('/dashboard', [DashboardController::class, 'index'])
+        Route::get('admin/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
 
         // MENU
