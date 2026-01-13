@@ -13,21 +13,10 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::where('is_active', true)
-            ->select('id', 'name', 'description', 'price', 'image_path')
             ->orderBy('name')
             ->get();
 
         return view('customer.menu.index', compact('menus'));
-    }
-
-    /**
-     * Detail menu
-     */
-    public function show(Menu $menu)
-    {
-        abort_if(!$menu->is_active, 404);
-
-        return view('customer.menu.show', compact('menu'));
     }
 
     /**
