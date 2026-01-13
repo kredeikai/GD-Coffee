@@ -45,7 +45,7 @@ class DashboardController extends Controller
             ->orderBy('month')
             ->get();
 
-        $orderPerMonth = Order::selectRaw('MONTH(created_at) as month, COUNT(*) as total')
+        $orderPerMonth = Order::selectRaw('strftime("%m", created_at) as month, COUNT(*) as total')
             ->whereYear('created_at', $year)
             ->groupBy('month')
             ->orderBy('month')
