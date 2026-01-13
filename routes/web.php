@@ -13,8 +13,8 @@ use App\Http\Controllers\Public\PublicMenuController;
 use App\Http\Controllers\Superadmin\DashboardController as SuperadminDashboard;
 
 // Admin
-use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 
 // Customer (Sudah Login)
@@ -79,7 +79,7 @@ Route::post('/register', [AuthController::class, 'register'])
     ->name('register.process');
 
 Route::post('/logout', [AuthController::class, 'logout'])
-    ->name('auth/logout');
+    ->name('auth.logout');
 
 
 /*
