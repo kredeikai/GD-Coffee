@@ -97,8 +97,7 @@ Kami menerapkan sistem Automatic Deployment yang terintegrasi langsung dengan Gi
 
 1. **Staging/Development :** Setiap perubahan yang dilakukan di branch anggota tim (Rifo, byan, ibrah) <br>
    dapat dipantau melalui preview lokal sebelum digabung ke main.
-2. **Production :** Branch main bertindak sebagai lingkungan produksi. Begitu Pull Request (PR) di-merge ke main dan lolos pengujian GitHub Actions, <br>
-    Railway akan mendeteksi perubahan tersebut dan melakukan build ulang secara otomatis.
+2. **Production :** Branch main bertindak sebagai lingkungan produksi. Begitu Pull Request (PR) di-merge ke main dan lolos pengujian GitHub Actions, Railway akan mendeteksi perubahan tersebut dan melakukan build ulang secara otomatis.
 3. **Zero Downtime :** Railway memastikan aplikasi tetap berjalan selama proses build berlangsung.
 
 ### Mekanisme Rollback
