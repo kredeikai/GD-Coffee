@@ -13,6 +13,8 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Order::class);
+
         $orders = Order::with('user')
             ->latest()
             ->get();
@@ -25,6 +27,8 @@ class OrderController extends Controller
      */
     public function updateStatus(Request $request, Order $order)
     {
+        $this->authorize('updateStatus', $order);
+    
         $request->validate([
             'status' => ['required', 'in:pending,processing,ready'],
         ]);

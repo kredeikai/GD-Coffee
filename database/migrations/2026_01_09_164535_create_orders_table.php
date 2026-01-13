@@ -16,7 +16,12 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->enum('type', ['pickup', 'delivery']);
             $table->text('address')->nullable();
-            $table->enum('status', ['pending', 'processing', 'ready', 'completed'])
+            
+            $table->enum('status', [
+                'pending', 
+                'processing', 
+                'ready', 
+                'completed'])
                 ->default('pending');
             $table->integer('total_price');
             $table->timestamps();

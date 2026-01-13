@@ -29,6 +29,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Order::class);
+
         $data = $request->validate([
             'menu_id' => ['required', 'exists:menus,id'],
             'qty'     => ['required', 'integer', 'min:1'],
