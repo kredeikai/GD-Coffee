@@ -79,7 +79,7 @@ Route::post('/register', [AuthController::class, 'register'])
     ->name('register.process');
 
 Route::post('/logout', [AuthController::class, 'logout'])
-    ->name('auth.logout');
+    ->name('auth/logout');
 
 
 /*
@@ -104,7 +104,7 @@ Route::prefix('admin')
     ->middleware(['auth', 'role:admin'])
     ->group(function () {
 
-        Route::get('admin/dashboard', [DashboardController::class, 'index'])
+        Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
 
         // MENU

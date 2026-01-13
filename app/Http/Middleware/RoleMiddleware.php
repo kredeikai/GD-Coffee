@@ -20,7 +20,7 @@ class RoleMiddleware
         }
 
         // 2. Cek role
-        if (!in_array(Auth::user()->role, $roles)) {
+        if (!Auth::check() || !in_array(Auth::user()->role, $roles)) {
             abort(403, 'Akses ditolak');
         }
 
