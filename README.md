@@ -11,9 +11,9 @@
 ## 👥 Anggota Tim
 | Nama Lengkap | NIM | Tugas |
 |---------------|-----|--------|
-| Muhammad Ibrah Adzdzikra | 2310120010 | Business & Konsep Utama |
-| Muhammad Abyan Alwafi Effendy | 2310120024 | Developer / CI-CD Workflows |
-| Muhammad Dzikri Khairrifo | 2310120025 | Developer / Frontend |
+| Muhammad Ibrah Adzdzikra | 2310120010 | Business & Konsep Utama / Frontend |
+| Muhammad Abyan Alwafi Effendy | 2310120024 | Developer / Customer Order / Workflow |
+| Muhammad Dzikri Khairrifo | 2310120025 | Developer / Frontend / CI-CD Workflow |
 
 ---
 
@@ -88,6 +88,33 @@ kurang lebih seperti: Branch pribadi → Pull Request → main
    <img width="464" height="272" alt="Screenshot 2026-01-13 035354" src="https://github.com/user-attachments/assets/db3d7d82-64aa-4b0a-a92c-e18d32a3d9ba" />
 
 9. Jika CI gagal → PR ditolak sampai diperbaiki
+
+## 🚀 Continuous Deployment (CD) & Hosting
+Project ini menggunakan Railway sebagai platform cloud untuk deployment otomatis yang terbagi menjadi dua alur utama:
+
+### Deployment Staging & Production
+Kami menerapkan sistem Automatic Deployment yang terintegrasi langsung dengan GitHub:
+
+1. **Staging/Development :** Setiap perubahan yang dilakukan di branch anggota tim (Rifo, byan, ibrah) <br>
+   dapat dipantau melalui preview lokal sebelum digabung ke main.
+2. **Production :** Branch main bertindak sebagai lingkungan produksi. Begitu Pull Request (PR) di-merge ke main dan lolos pengujian GitHub Actions, <br>
+    Railway akan mendeteksi perubahan tersebut dan melakukan build ulang secara otomatis.
+3. **Zero Downtime :** Railway memastikan aplikasi tetap berjalan selama proses build berlangsung.
+
+### Mekanisme Rollback
+Untuk menjaga ketersediaan layanan jika terjadi major bug pada versi terbaru, kami memiliki dua lapis mekanisme rollback:
+
+1. **Rollback via Railway :** Jika deployment terbaru gagal atau memiliki error fatal, tim dapat masuk ke Dashboard Railway, <br>
+    memilih tab Deployments, dan melakukan Rollback ke versi stabil sebelumnya (Success state) hanya dengan satu klik. <br>
+    Ini akan mengembalikan aplikasi ke kondisi kerja terakhir dalam hitungan detik. <br><br>
+    
+    **Ini berada di Deploy ke #23** <br>
+    <img width="430" height="356" alt="image" src="https://github.com/user-attachments/assets/76db9932-bcb0-4aa7-be76-1d27b8941bb1" /> <br>
+
+    Jika klik "Rollback" nanti dia akan kembali ke Deploy #22 <br><br>
+    <img width="477" height="414" alt="Screenshot 2026-01-13 225517" src="https://github.com/user-attachments/assets/00f46195-cf2c-4f4f-9cce-035152ece217" /> <br>
+
+3. **Git Revert :** Secara teknis, tim dapat menggunakan perintah git revert pada repository untuk membatalkan commit tertentu dan melakukan push ulang, yang kemudian akan memicu ulang pipeline CI/CD untuk memperbaiki keadaan di server.
 
 ## ☕ GD Coffee
 
