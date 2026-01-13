@@ -100,9 +100,9 @@
                 <p class="text-gray-600">Manager</p>
             </div>
             <div class="bg-white rounded-lg shadow p-6 hover:shadow-xl transition">
-                <img src="{{ asset('images/team3.jpg') }}" alt="Barista"
+                <img src="{{ asset('images/team3.jpeg') }}" alt="Barista"
                     class="w-32 h-32 object-cover mx-auto rounded-full mb-4 border-4 border-amber-600">
-                <h3 class="text-xl font-semibold">Muhammad Lutfi</h3>
+                <h3 class="text-xl font-semibold">Muhammad Abyan Alwafi Effendy</h3>
                 <p class="text-gray-600">Senior Barista</p>
             </div>
         </div>
