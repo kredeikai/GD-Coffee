@@ -1,9 +1,9 @@
-# ☕ GD COFFE
+# ☕ GD COFFEE
 
 ---
 
-**NAMA TEAM:** GD COFFE <br>
-**NAMA PROJECT:** GD COFFE WEBSITE <br>
+**NAMA TEAM:** GD COFFEE <br>
+**NAMA PROJECT:** GD COFFEE WEBSITE <br>
 **JENIS BISNIS:** F&B
 
 ---
