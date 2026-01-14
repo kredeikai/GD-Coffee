@@ -15,6 +15,8 @@
 | Muhammad Abyan Alwafi Effendy | 2310120024 | Developer / Customer Order / Workflow |
 | Muhammad Dzikri Khairrifo | 2310120025 | Developer / Frontend / CI-CD Workflow |
 
+**Link Presentasi :** https://youtu.be/UVbzfYi4Ycs
+
 ---
 
 ## ⚙️ Arsitektur CI/CD Pipeline
